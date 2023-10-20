@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Customer Center
+  labels:
+    app: Customer Center
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Customer Center
+  template:
+    metadata:
+      labels:
+        app: Customer Center
+    spec:
+      containers:
+        - name: Customer Center
+          image: username/Customer Center:latest
+          ports:
+            - containerPort: 8085
+        
